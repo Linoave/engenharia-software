@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int linhas, i, j;
+
+    // Solicita o número de linhas
+    printf("Digite o número de linhas do triângulo: ");
+    scanf("%d", &linhas);
+
+    if(linhas <= 0) {
+        printf("Por favor, digite um número inteiro positivo.\n");
+        return 1;
+    }
+
+    // Laço externo: controla as linhas
+    for(i = 1; i <= linhas; i++) {
+        // Laço interno: imprime os asteriscos em cada linha
+        for(j = 1; j <= i; j++) {
+            printf("*");
+        }
+        printf("\n"); // pula para a próxima linha
+    }
+
+    return 0;
+}
