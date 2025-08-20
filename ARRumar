@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main () {
+    int idade;
+    float altura;
+    char inicial;
+    
+    printf("Digite sua idade: ");
+    scanf ("%d", &idade) ; // Lê um número inteiro
+    
+    printf("Digite sua altura: ");
+    scanf("%f", &altura); // Lê um número de ponto flutuante
+    
+    printf("Digite a inicial do seu nome: ");
+    scanf (" %c", &inicial); // Lê um caractere (observe o espaço antes do %c)
+    
+    printf("\nIdade: %d, Altura: %.2f, Inicial: %c\n", idade, altura, inicial);
+return 0;
+}
