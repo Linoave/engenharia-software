@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main() {
+    int linhas, colunas;
+    int i, j;
+    int somaTotal = 0, somaPares = 0;
+    float media;
+    int maior, menor;
+
+    // Solicita ao usuário o tamanho da matriz
+    printf("Digite o número de linhas da matriz: ");
+    scanf("%d", &linhas);
+    printf("Digite o número de colunas da matriz: ");
+    scanf("%d", &colunas);
+
+    // Declaração da matriz com tamanho definido pelo usuário
+    int matriz[linhas][colunas];
+
+    // Preenchimento da matriz
+    printf("\nDigite os valores da matriz (%dx%d):\n", linhas, colunas);
+    for(i = 0; i < linhas; i++) {
+        for(j = 0; j < colunas; j++) {
+            printf("Elemento [%d][%d]: ", i+1, j+1);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Inicializa maior e menor com o primeiro elemento
+    maior = menor = matriz[0][0];
+
+    // Percorre a matriz para cálculos
+    for(i = 0; i < linhas; i++) {
+        for(j = 0; j < colunas; j++) {
+            int valor = matriz[i][j];
+
+            somaTotal += valor;             // Soma total
+
+            if(valor % 2 == 0) {
+                somaPares += valor;         // Soma apenas os pares
+            }
+
+            if(valor > maior) maior = valor;   // Atualiza maior
+            if(valor < menor) menor = valor;   // Atualiza menor
+        }
+    }
+
+    // Calcula a média
+    media = (float)somaTotal / (linhas * colunas);
+
+    // Exibe a matriz
+    printf("\nMatriz:\n");
+    for(i = 0; i < linhas; i++) {
+        for(j = 0; j < colunas; j++) {
+            printf("%6d", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Exibe os resultados
+    printf("\nSoma total de todos os elementos: %d\n", somaTotal);
+    printf("Soma dos valores pares: %d\n", somaPares);
+    printf("Média dos valores da matriz: %.2f\n", media);
+    printf("Maior valor da matriz: %d\n", maior);
+    printf("Menor valor da matriz: %d\n", menor);
+
+    return 0;
+}
