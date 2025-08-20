@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+
+    char nome[30];
+    int idade;
+    float n1, n2, n3, media;
+    
+    printf("Digite seu nome: ");
+    scanf(" %[^\n]", nome);
+    
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    
+    printf("Digite três notas: ");
+    scanf("%f %f %f", &n1, &n2, &n3);
+    
+    media = (n1 + n2 + n3) / 3;
+    
+    printf("\nOlá, %s!\n", nome);
+    printf("Média: %.3f\n", media);
+    
+    if(media >= 9)
+        printf("Média >= 9? %.3f\nAprovado\n", media);
+    else if(media >= 7)
+        printf("Média >= 7 e < 9? %.3f\nAprovado com excelente desempenho\n", media);
+    else
+        printf("Média < 7? %.3f\nReprovado. Continue se esforçando\n", media);
+    
+    return 0;
+}
+
