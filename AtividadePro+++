@@ -1,0 +1,38 @@
+include <stdio.h>
+#include <locale.h>
+
+int main () {
+    setlocale(LC_ALL, "Portuguese");
+
+    char nome[50];
+    int idade;
+    char curso[20];
+    int matrícula;
+    char telefone[20];
+    char email[50];
+
+    printf("Digite seu nome completo: ");
+    fgets(nome, sizeof(nome), stdin);
+
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    getchar(); // limpa o ENTER do buffer
+
+    printf("Digite seu curso: ");
+    fgets(curso, sizeof(curso), stdin);
+
+    printf("Digite sua matrícula: ");
+    scanf("%d", &matrícula);
+    getchar(); // limpa o ENTER do buffer
+
+    printf("Digite seu telefone: ");
+    fgets(telefone, sizeof(telefone), stdin);
+
+    printf("Digite seu e-mail: ");
+    fgets(email, sizeof(email), stdin);
+
+    printf("\nOlá, %sVocê tem %d anos.\nSua matrícula é %d no curso de %sVamos te contatar pelo telefone %s e/ou pelo e-mail %s\n",
+           nome, idade, matrícula, curso, telefone, email);
+
+    return 0;
+}
