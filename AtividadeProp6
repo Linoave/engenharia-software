@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int vetor[10];        // Declaração do vetor com 10 elementos
+    int i, somaPares = 0, somaTotal = 0;
+    float media;
+
+    // Solicita ao usuário que digite os 10 valores do vetor
+    printf("Digite 10 números inteiros:\n");
+    for(i = 0; i < 10; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+
+    // Percorre o vetor para calcular soma dos pares e soma total
+    for(i = 0; i < 10; i++) {
+        somaTotal += vetor[i];         // Soma de todos os elementos
+
+        if(vetor[i] % 2 == 0) {       // Verifica se o elemento é par
+            somaPares += vetor[i];    // Soma apenas os pares
+        }
+    }
+
+    // Calcula a média dos elementos
+    media = somaTotal / 10.0; // Divisão por 10.0 para obter resultado float
+
+    // Exibe os resultados
+    printf("\nSoma dos números pares: %d\n", somaPares);
+    printf("Média de todos os elementos: %.2f\n", media);
+
+    return 0;
+}
