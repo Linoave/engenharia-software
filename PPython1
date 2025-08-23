@@ -1,0 +1,18 @@
+nome = input("Qual o seu nome? ")
+n = int(input("Quantos números você vai digitar?"))
+
+soma = 0
+for i in range(n):
+    valor = float(input(f"Digite o {i+1}º valor: "))
+    soma += valor
+    
+media = soma / números
+    
+if media >= 70:
+        status = "Excelente!"
+elif media >= 50:
+            status = "Bom."
+else:
+    status = "Precisa melhorar."
+    
+print(f"\nOlá, {nome}!\nA média obtida foi {media:.2f}.\n{status}")
