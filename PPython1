@@ -6,7 +6,7 @@ for i in range(n):
     valor = float(input(f"Digite o {i+1}º valor: "))
     soma += valor
     
-media = soma / números
+media = soma / n
     
 if media >= 70:
         status = "Excelente!"
